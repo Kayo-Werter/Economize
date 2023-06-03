@@ -6,17 +6,17 @@ import java.util.List;
 
 
 public class HistoricoDeCompras {
-    private List<Compra> compras;
+    private List<Compras> compras;
 
     public HistoricoDeCompras() {
         compras = new ArrayList<>();
     }
 
-    public void adicionarCompra(Compra compra) {
+    public void adicionarCompra(Compras compra) {
         compras.add(compra);
     }
 
-    public List<Compra> getCompras() {
+    public List<Compras> getCompras() {
         return compras;
     }
 
@@ -25,8 +25,9 @@ public class HistoricoDeCompras {
             System.out.println("Nenhuma compra registrada.");
         } else {
             System.out.println("Histórico de compras:");
-            for (Compra compra : compras) {
+            for (Compras compra : compras) {
                 System.out.println(compra);
             }
         }
     }
+}

@@ -1,5 +1,7 @@
 package poo.economize;
 
+import poo.economize.cadastro.CadastroUsuario;
+
 public class Login extends CadastroUsuario {
 
     private String senha;

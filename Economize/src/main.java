@@ -1,11 +1,13 @@
 import poo.economize.*;
+import poo.economize.cadastro.CadastroUsuario;
+import poo.economize.cadastro.ConsultaCep;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+
+
 
         Dados dados = new Dados();
 
@@ -36,6 +38,8 @@ public class main {
             CadastroUsuario.cadastrar();
         }
         dados.listarClientes();
+
+
     }
 }
 

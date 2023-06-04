@@ -1,4 +1,7 @@
-package poo.economize;
+package poo.economize.cadastro;
+
+import poo.economize.Cliente;
+import poo.economize.Dados;
 
 import java.util.Scanner;
 
@@ -7,22 +10,27 @@ public class CadastroUsuario {
     private String cpf;
     private int telefone;
     private String email;
+    private Endereco endereco;
     private static Scanner sc = new Scanner(System.in);
 
 
-    public CadastroUsuario(String nome, String cpf, int telefone, String email) {
+    public CadastroUsuario(String nome, String cpf, int telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
+        this.endereco = endereco;
     }
 
     public CadastroUsuario(String email) {
         this.email = email;
     }
 
+
+
     public static void cadastrar(){
-        String nome, cpf, email, telefone, senha, confirmacaoSenha;
+        String nome, cpf, email, telefone, senha, confirmacaoSenha, cep;
+        ConsultaCep consultaCep = new ConsultaCep();
 
         System.out.print("Nome Completo: ");
         nome = sc.nextLine();
@@ -32,6 +40,13 @@ public class CadastroUsuario {
 
         System.out.print("Telefone: ");
         telefone = sc.nextLine();
+
+        System.out.println("CEP: ");
+        cep = sc.nextLine();
+
+        Endereco enderecoUsuario = consultaCep.buscarEndereco(cep);
+
+
 
         System.out.print("Email: ");
         email = sc.nextLine();
@@ -44,7 +59,7 @@ public class CadastroUsuario {
             confirmacaoSenha = sc.nextLine();
 
             if (senha.equals(confirmacaoSenha)) {
-                Cliente novoCliente = new Cliente(nome, cpf, telefone, email, senha);
+                Cliente novoCliente = new Cliente(nome, cpf, telefone, email, senha, enderecoUsuario);
                 Dados.adicionarCliente(novoCliente);
                 break;
             } else {
@@ -52,6 +67,10 @@ public class CadastroUsuario {
             }
 
         }
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
     }
 
     public String getNome() {

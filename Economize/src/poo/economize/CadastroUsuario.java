@@ -1,10 +1,13 @@
 package poo.economize;
 
+import java.util.Scanner;
+
 public class CadastroUsuario {
     private String nome;
     private String cpf;
     private int telefone;
     private String email;
+    private static Scanner sc = new Scanner(System.in);
 
 
     public CadastroUsuario(String nome, String cpf, int telefone, String email) {
@@ -18,6 +21,26 @@ public class CadastroUsuario {
         this.email = email;
     }
 
+    public static void cadastrar(){
+        String nome, cpf, senha, email, telefone;
+
+        System.out.print("Nome Completo: ");
+        nome = sc.nextLine();
+
+        System.out.print("CPF: ");
+        cpf = sc.nextLine();
+
+        System.out.print("Telefone: ");
+        telefone = sc.nextLine();
+
+        System.out.print("Email: ");
+        email = sc.nextLine();
+
+        Cliente novoCliente = new Cliente(nome, cpf, telefone, email);
+
+        Dados.adicionarCliente(novoCliente);
+
+    }
 
     public String getNome() {
         return nome;

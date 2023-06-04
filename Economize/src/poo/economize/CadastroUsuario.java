@@ -22,7 +22,7 @@ public class CadastroUsuario {
     }
 
     public static void cadastrar(){
-        String nome, cpf, senha, email, telefone;
+        String nome, cpf, email, telefone, senha, confirmacaoSenha;
 
         System.out.print("Nome Completo: ");
         nome = sc.nextLine();
@@ -36,10 +36,22 @@ public class CadastroUsuario {
         System.out.print("Email: ");
         email = sc.nextLine();
 
-        Cliente novoCliente = new Cliente(nome, cpf, telefone, email);
+        while (true) {
+            System.out.print("Senha: ");
+            senha = sc.nextLine();
 
-        Dados.adicionarCliente(novoCliente);
+            System.out.print("Confirmar Senha: ");
+            confirmacaoSenha = sc.nextLine();
 
+            if (senha.equals(confirmacaoSenha)) {
+                Cliente novoCliente = new Cliente(nome, cpf, telefone, email, senha);
+                Dados.adicionarCliente(novoCliente);
+                break;
+            } else {
+                System.out.println("Senhas divergentes! ");
+            }
+
+        }
     }
 
     public String getNome() {

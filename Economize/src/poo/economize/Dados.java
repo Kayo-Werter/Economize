@@ -8,21 +8,24 @@ public class Dados {
     private static List<Cliente> listaClientes= new ArrayList<>();
 
     public Dados() {
-        dadosPadaria();
+        dadosEconomize();
     }
 
     public static void adicionarCliente(Cliente cliente) {
         listaClientes.add(cliente);
     }
 
-    public void dadosPadaria() {
-        Cliente pablo = new Cliente("pablo",  "12312343434", "4002-8922", "pablo@ads.com");
-        Cliente jany = new Cliente("jany", "847.923.456-34", "3421-8922", "jany@ads.com");
-        Cliente clark = new Cliente("clark", "564.564.234-23", "9834-8922", "clark@ads.com");
+    public void dadosEconomize() {
+        Cliente pablo = new Cliente("pablo",  "12312343434", "4002-8922", "pablo@ads.com", "1234");
+        Cliente jany = new Cliente("jany", "847.923.456-34", "3421-8922", "jany@ads.com", "12345");
+        Cliente clark = new Cliente("clark", "564.564.234-23", "9834-8922", "clark@ads.com", "123456");
 
         listaClientes.add(pablo);
         listaClientes.add(jany);
         listaClientes.add(clark);
+
+
+
 
     }
 

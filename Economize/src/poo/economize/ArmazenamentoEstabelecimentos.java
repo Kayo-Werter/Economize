@@ -32,4 +32,3 @@ public class ArmazenamentoEstabelecimentos {
         return null;
     }
 }
-}

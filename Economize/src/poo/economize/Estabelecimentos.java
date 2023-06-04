@@ -7,44 +7,40 @@ import java.util.Scanner;
 
 public class Estabelecimentos {
 
-    private List<Estabelecimento> listaEstabelecimentos;
     private String nome;
     private String cnpj;
     private List<Produtos> produtos;
 
-    public void cadastroEstabelecimentos(String nome, String cnpj) {
-        this.listaestabelecimento = new ArrayList<>();
+    public Estabelecimentos(String nome, String cnpj) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.produtos = new ArrayList<>();
     }
 
-    Scanner sc = new Scanner(System.in);
-
-    System.out.println("Nome: ");
-    nome = sc.nextLine();
-
-    System.out.println("CNPJ: ");
-    cnpj = sc.nextLine();
-
-}
-    public void adicionarProdutos(Produtos produtos) {
-        produtos.add(produtos);
+    public void adicionarProduto(Produtos produto) {
+        produtos.add(produto);
     }
 
-    public void removerProdutos(Produtos produtos) {
-        produtos.remove(produtos);
+    public void removerProduto(Produtos produto) {
+        produtos.remove(produto);
     }
 
     public List<Produtos> getProdutos() {
         return produtos;
     }
 
-    public void listarProdutos() {
-        System.out.println("Produtos disponíveis no supermercado " + nome + ":");
-        for (Produtos produtos : produtos) {
-            System.out.println(produtos.getNome() + " - R$" + produtos.getPreco());
-            preço = sc.nextDouble();
-        }
+    public void listarProdutos(String nomeEstabelecimento) {
+        ArmazenamentoEstabelecimentos armazenamento = new ArmazenamentoEstabelecimentos();
+        Estabelecimentos estabelecimento = armazenamento.buscarEstabelecimento(nomeEstabelecimento);
+    }
+
+    @Override
+    public String toString() {
+        return "Estabelecimento: " + nome +
+                "\nCNPJ: " + cnpj;
+    }
+
+    public Object getNome() {
+        return null;
     }
 }

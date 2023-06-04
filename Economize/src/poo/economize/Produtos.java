@@ -16,6 +16,7 @@ public class Produtos {
     public String getNome() {
         return nome;
     }
+
     public String getMarca() {
         return marca;
     }
@@ -35,6 +36,10 @@ public class Produtos {
                 "\nMarca = " + marca +
                 "\nvalor = " + valor +
                 "\nQuantidade = " + quantidade + "\n";
+    }
+
+    public String getPreco() {
+        return null;
     }
 
 }

@@ -12,22 +12,35 @@ public class Cupom {
         this.dataValidade = dataValidade;
         this.desconto = desconto;
     }
+
     public String getCodigo() {
         return codigo;
     }
+
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
     public Date getDataValidade() {
         return dataValidade;
     }
+
     public void setDataValidade(Date dataValidade) {
         this.dataValidade = dataValidade;
     }
+
     public double getDesconto() {
         return desconto;
     }
+
     public void setDesconto(double desconto) {
         this.desconto = desconto;
+    }
+
+    @Override
+    public String toString() {
+        return "Cupom: " + codigo +
+                "\nData de validade: " + dataValidade +
+                "\nDesconto: " + desconto;
     }
 }

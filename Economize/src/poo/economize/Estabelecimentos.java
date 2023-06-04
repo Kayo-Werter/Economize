@@ -1,3 +1,5 @@
+package poo.economize;
+
 import poo.economize.ArmazenamentoEstabelecimentos;
 import poo.economize.Produtos;
 
@@ -27,14 +29,7 @@ public class Estabelecimentos {
         return produtos;
     }
 
-    public void listarProdutos(String nomeEstabelecimento) {
-        ArmazenamentoEstabelecimentos armazenamento = new ArmazenamentoEstabelecimentos();
-        Estabelecimentos estabelecimento = armazenamento.buscarEstabelecimento(nomeEstabelecimento);
-        System.out.println("Produtos disponíveis no estabelecimento " + estabelecimento.getNome() + ":");
-        for (Produtos produto : estabelecimento.getProdutos()) {
-            System.out.println(produto.getNome() + " - R$" + produto.getPreco());
-        }
-    }
+
 
     @Override
     public String toString() {

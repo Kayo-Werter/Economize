@@ -25,8 +25,6 @@ public class Dados {
         listaClientes.add(clark);
 
 
-
-
     }
 
     public void listarClientes() {

@@ -1,12 +1,10 @@
-package poo.economize;
+import poo.economize.ArmazenamentoEstabelecimentos;
+import poo.economize.Produtos;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 
 public class Estabelecimentos {
-
     private String nome;
     private String cnpj;
     private List<Produtos> produtos;
@@ -32,15 +30,18 @@ public class Estabelecimentos {
     public void listarProdutos(String nomeEstabelecimento) {
         ArmazenamentoEstabelecimentos armazenamento = new ArmazenamentoEstabelecimentos();
         Estabelecimentos estabelecimento = armazenamento.buscarEstabelecimento(nomeEstabelecimento);
+        System.out.println("Produtos disponíveis no estabelecimento " + estabelecimento.getNome() + ":");
+        for (Produtos produto : estabelecimento.getProdutos()) {
+            System.out.println(produto.getNome() + " - R$" + produto.getPreco());
+        }
     }
 
     @Override
     public String toString() {
-        return "Estabelecimento: " + nome +
-                "\nCNPJ: " + cnpj;
+        return "Estabelecimento: " + nome + "\nCNPJ: " + cnpj;
     }
 
-    public Object getNome() {
-        return null;
+    public String getNome() {
+        return nome;
     }
 }

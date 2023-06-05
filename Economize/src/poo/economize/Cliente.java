@@ -1,5 +1,6 @@
 package poo.economize;
 
+import poo.economize.cadastro.ConsultaCep;
 import poo.economize.cadastro.Endereco;
 
 public class Cliente {
@@ -11,14 +12,27 @@ public class Cliente {
     private Endereco endereco;
     private String cep;
 
-    public Cliente(String nome, String cpf, String telefone, String email, String senha, Endereco endereco) {
+    public Cliente(String nome, String cpf, String telefone, String email, String senha, String cep) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
-        this.endereco = endereco;
+        this.senha = senha;
+        this.cep = cep;
+
+        ConsultaCep consultaCep = new ConsultaCep();
+        this.endereco = consultaCep.buscarEndereco(cep);
     }
 
+    public boolean authenticate(String email, String senha) {
+        boolean isAuthenticated = getEmail().equalsIgnoreCase(email) && getSenha().equalsIgnoreCase(senha);
+        if (isAuthenticated) {
+            System.out.println("Login bem-sucedido!");
+        } else {
+            System.out.println("Endereço de email ou senha inválidos.");
+        }
+        return isAuthenticated;
+    }
 
     public String getNome() {
         return nome;

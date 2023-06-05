@@ -19,19 +19,14 @@ public class Dados {
     }
 
     public void dadosEconomize() {
-        ConsultaCep consultaCep = new ConsultaCep();
 
-        Endereco enderecoPadrao = consultaCep.buscarEndereco("58701068");
-
-        Cliente pablo = new Cliente("pablo",  "12312343434", "4002-8922", "pablo@ads.com", "1234", enderecoPadrao);
-        Cliente jany = new Cliente("jany", "847.923.456-34", "3421-8922", "jany@ads.com", "12345", enderecoPadrao);
-        Cliente clark = new Cliente("clark", "564.564.234-23", "9834-8922", "clark@ads.com", "123456", enderecoPadrao);
+        Cliente pablo = new Cliente("pablo",  "123.123.434-34", "4002-8922", "pablo@ads.com", "1234", "58704440");
+        Cliente jany = new Cliente("jany", "847.923.456-34", "3421-8922", "jany@ads.com", "12345", "58701068");
+        Cliente clark = new Cliente("clark", "564.564.234-23", "9834-8922", "clark@ads.com", "123456", "58701070");
 
         listaClientes.add(pablo);
         listaClientes.add(jany);
         listaClientes.add(clark);
-
-
     }
 
     public void listarClientes() {
@@ -42,8 +37,8 @@ public class Dados {
             System.out.println("| Nome: " + listaCliente.getNome() +
                     " | Email: " + listaCliente.getEmail() +
                     " | Contato: " + listaCliente.getTelefone() +
-                    " | CPF: " + listaCliente.getCpf() +
-                    " | Rua: " + listaCliente.getEndereco());
+                    " | CPF: " + listaCliente.getCpf() + "\n" +
+                    "Endereco: " + listaCliente.getEndereco() + "\n");
         }
     }
 }

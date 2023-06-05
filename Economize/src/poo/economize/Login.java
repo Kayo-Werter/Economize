@@ -1,35 +1,18 @@
 package poo.economize;
 
-import poo.economize.cadastro.CadastroUsuario;
 
-public class Login extends CadastroUsuario {
+public class Login {
 
+    private Cliente cliente;
+    private String email;
     private String senha;
-    private boolean isAuthenticated;
 
     public Login(String email, String senha) {
-        super(email);
+        this.email = email;
         this.senha = senha;
-        authenticate(email, senha);
     }
 
-    public String getSenha() {
-        return senha;
-    }
 
-    public boolean authenticate(String enteredUsername, String enteredPassword) {
-        isAuthenticated = getEmail().equals(enteredUsername) && senha.equals(enteredPassword);
-        if (isAuthenticated) {
-            System.out.println("Login bem-sucedido!");
-        } else {
-            System.out.println("Endereço de email ou senha inválidos.");
-        }
-        return isAuthenticated;
-    }
 
-    @Override
-    public String toString() {
-        return getEmail();
-    }
 }
 

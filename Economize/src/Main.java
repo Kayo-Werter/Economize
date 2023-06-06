@@ -1,22 +1,19 @@
 import poo.economize.*;
 import poo.economize.cadastro.CadastroUsuario;
-import poo.economize.cadastro.ConsultaCep;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         Dados dados = new Dados();
 
         while (true) {
-
             // Inicio do Sistema
-            System.out.println("1 - Entrar\n2 - cadastrar");
+            System.out.println("1 - Entrar\n2 - cadastrar\n0 - Sair");
             int busca = sc.nextInt();
             sc.nextLine();
-
             // Login
             if (busca == 1) {
 
@@ -27,13 +24,14 @@ public class main {
                 var senha = sc.nextLine();
 
                 Login login = new Login(email, senha);
-                System.out.println(login);
             } else if (busca == 2) {
                 CadastroUsuario.cadastrar();
+                System.out.println("Cadastro realizado!");
+            } else if (busca == 0) {
+                break;
             }
-            dados.listarClientes();
+           dados.listarClientes();
 
         }
     }
 }
-

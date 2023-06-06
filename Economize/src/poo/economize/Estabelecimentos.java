@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estabelecimentos {
-    private String nome;
-    private String cnpj;
-    private List<Produtos> produtos;
+    private static String nome;
+    private static String cnpj;
+    private static List<Produtos> produtos;
 
     public Estabelecimentos(String nome, String cnpj) {
         this.nome = nome;
@@ -17,19 +17,17 @@ public class Estabelecimentos {
         this.produtos = new ArrayList<>();
     }
 
-    public void adicionarProduto(Produtos produto) {
+    public static void adicionarProduto(Produtos produto) {
         produtos.add(produto);
     }
 
-    public void removerProduto(Produtos produto) {
+    public static void removerProduto(Produtos produto) {
         produtos.remove(produto);
     }
 
-    public List<Produtos> getProdutos() {
+    public static List<Produtos> getProdutos() {
         return produtos;
     }
-
-
 
     @Override
     public String toString() {

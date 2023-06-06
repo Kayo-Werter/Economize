@@ -1,18 +1,22 @@
 package poo.economize;
 
+import poo.economize.Dados;
 
 public class Login {
 
-    private Cliente cliente;
-    private String email;
-    private String senha;
 
     public Login(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
+        authenticate(email, senha);
     }
 
+    public void authenticate(String email, String senha) {
 
-
+        for (Cliente listaCliente : Dados.getListaClientes()) {
+            boolean isAuthenticated = listaCliente.getEmail().equalsIgnoreCase(email) && listaCliente.getSenha().equalsIgnoreCase(senha);
+            if (isAuthenticated) {
+                System.out.println("Seja bem vindo " + listaCliente.getNome() + "!");
+                break;
+            }
+        }
+    }
 }
-

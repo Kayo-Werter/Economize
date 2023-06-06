@@ -17,7 +17,6 @@ public class ConsultaCep {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(endereco)
                 .build();
-
         try {
             HttpResponse<String> response  = HttpClient
                     .newHttpClient()
@@ -27,6 +26,5 @@ public class ConsultaCep {
         } catch (Exception e) {
             throw new RuntimeException("Não foi possível consultar o cep informado");
         }
-
     }
 }

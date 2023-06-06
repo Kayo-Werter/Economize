@@ -4,34 +4,22 @@ import poo.economize.cadastro.ConsultaCep;
 import poo.economize.cadastro.Endereco;
 
 public class Cliente {
-    private String nome;
-    private String cpf;
-    private String telefone;
-    private String email;
-    private String senha;
-    private Endereco endereco;
-    private String cep;
+    protected String nome;
+    protected String cpf;
+    protected String telefone;
+    protected String email;
+    protected String senha;
+    protected Endereco endereco;
+    protected String numCasa;
 
-    public Cliente(String nome, String cpf, String telefone, String email, String senha, String cep) {
+    public Cliente(String nome, String cpf, String telefone, String email, String senha, Endereco endereco, String numCasa) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
-        this.cep = cep;
-
-        ConsultaCep consultaCep = new ConsultaCep();
-        this.endereco = consultaCep.buscarEndereco(cep);
-    }
-
-    public boolean authenticate(String email, String senha) {
-        boolean isAuthenticated = getEmail().equalsIgnoreCase(email) && getSenha().equalsIgnoreCase(senha);
-        if (isAuthenticated) {
-            System.out.println("Login bem-sucedido!");
-        } else {
-            System.out.println("Endereço de email ou senha inválidos.");
-        }
-        return isAuthenticated;
+        this.endereco = endereco;
+        this.numCasa = numCasa;
     }
 
     public String getNome() {
@@ -58,7 +46,7 @@ public class Cliente {
         return endereco;
     }
 
-    public String getCep() {
-        return cep;
+    public String getNumCasa() {
+        return numCasa;
     }
 }

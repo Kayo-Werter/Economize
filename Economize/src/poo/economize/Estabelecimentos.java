@@ -1,6 +1,5 @@
 package poo.economize;
 
-import poo.economize.ArmazenamentoEstabelecimentos;
 import poo.economize.Produtos;
 
 import java.util.ArrayList;
@@ -9,24 +8,37 @@ import java.util.List;
 public class Estabelecimentos {
     private String nome;
     private String cnpj;
-    private List<Produtos> produtos = new ArrayList<>();
+    private List<Produtos> listaProdutos = new ArrayList<>();
 
-    public Estabelecimentos(String nome, String cnpj, List<Produtos> produtos) {
+    public Estabelecimentos(String nome, String cnpj, List<Produtos> listaProdutos) {
         this.nome = nome;
         this.cnpj = cnpj;
-        this.produtos = produtos;
+        this.listaProdutos = listaProdutos;
     }
 
     public void adicionarProduto(Produtos produto) {
-        produtos.add(produto);
+        listaProdutos.add(produto);
     }
 
     public void removerProduto(Produtos produto) {
-        produtos.remove(produto);
+        listaProdutos.remove(produto);
     }
 
-    public List<Produtos> getProdutos() {
-        return produtos;
+    public String getNome() {
+        return nome;
+    }
+
+    public List<Produtos> getListaProdutos() {
+        return listaProdutos;
+    }
+
+    public void visualizarProdutos() {
+
+        for (Produtos listaProduto : listaProdutos) {
+            System.out.println("\nNome: " + listaProduto.getNome() +
+                    "\nMarca: " + listaProduto.getMarca() +
+                    "\nValor: " + listaProduto.getValor());
+        }
     }
 
     @Override
@@ -34,7 +46,5 @@ public class Estabelecimentos {
         return "Estabelecimento: " + nome + "\nCNPJ: " + cnpj;
     }
 
-    public String getNome() {
-        return nome;
-    }
+
 }

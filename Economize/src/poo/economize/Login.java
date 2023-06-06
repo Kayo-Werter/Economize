@@ -9,14 +9,16 @@ public class Login {
         authenticate(email, senha);
     }
 
-    public void authenticate(String email, String senha) {
-
+    public boolean authenticate(String email, String senha) {
+        boolean isAuthenticated = false;
         for (Cliente listaCliente : Dados.getListaClientes()) {
-            boolean isAuthenticated = listaCliente.getEmail().equalsIgnoreCase(email) && listaCliente.getSenha().equalsIgnoreCase(senha);
+            isAuthenticated = listaCliente.getEmail().equalsIgnoreCase(email) &&
+                    listaCliente.getSenha().equalsIgnoreCase(senha);
             if (isAuthenticated) {
                 System.out.println("Seja bem vindo " + listaCliente.getNome() + "!");
                 break;
             }
         }
+        return isAuthenticated;
     }
 }

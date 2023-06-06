@@ -8,6 +8,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Dados dados = new Dados();
+        // Menu menu = new Menu();
 
         while (true) {
             // Inicio do Sistema
@@ -22,15 +23,19 @@ public class Main {
 
                 System.out.print("Senha: ");
                 var senha = sc.nextLine();
-
                 Login login = new Login(email, senha);
+
+                if(login.authenticate(email, senha)) {
+                    dados.listarEstabelecimentos();
+                }
+
             } else if (busca == 2) {
                 CadastroUsuario.cadastrar();
                 System.out.println("Cadastro realizado!");
+
             } else if (busca == 0) {
                 break;
             }
-           dados.listarClientes();
 
         }
     }

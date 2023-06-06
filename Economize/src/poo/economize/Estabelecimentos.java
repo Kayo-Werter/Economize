@@ -7,25 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estabelecimentos {
-    private static String nome;
-    private static String cnpj;
-    private static List<Produtos> produtos;
+    private String nome;
+    private String cnpj;
+    private List<Produtos> produtos = new ArrayList<>();
 
-    public Estabelecimentos(String nome, String cnpj) {
+    public Estabelecimentos(String nome, String cnpj, List<Produtos> produtos) {
         this.nome = nome;
         this.cnpj = cnpj;
-        this.produtos = new ArrayList<>();
+        this.produtos = produtos;
     }
 
-    public static void adicionarProduto(Produtos produto) {
+    public void adicionarProduto(Produtos produto) {
         produtos.add(produto);
     }
 
-    public static void removerProduto(Produtos produto) {
+    public void removerProduto(Produtos produto) {
         produtos.remove(produto);
     }
 
-    public static List<Produtos> getProdutos() {
+    public List<Produtos> getProdutos() {
         return produtos;
     }
 

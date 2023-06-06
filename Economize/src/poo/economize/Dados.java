@@ -11,6 +11,7 @@ public class Dados {
     private static Endereco enderecoTeste;
     private static List<Cliente> listaClientes = new ArrayList<>();
     private static List<Estabelecimentos> listaEstabelecimentos = new ArrayList<>();
+    private static List<Produtos> listaProdutos = new ArrayList<>();
 
     public Dados() {
         dadosEconomize();
@@ -35,9 +36,25 @@ public class Dados {
         listaClientes.add(jany);
         listaClientes.add(clark);
 
-        Estabelecimentos atacadao = new Estabelecimentos("Atacadão", "75.315.333/0199-85")
-        Estabelecimentos hyper = new Estabelecimentos("Hyper Queiroz", "12.522.432/0001-80")
-        Estabelecimentos guedes = new Estabelecimentos("Guedes", "12.522.469/0001-80")
+
+
+        Estabelecimentos atacadao = new Estabelecimentos("Atacadão", "75.315.333/0199-85", );
+
+        
+        Estabelecimentos hyper = new Estabelecimentos("Hyper Queiroz", "10.670.811/0008-20");
+
+
+        Produtos queijoIsisGuedes = new Produtos("Queijo Mussarela", "Isis", 39.99, 34, "Lácteo");
+        Produtos queijoNatvilleGuedes = new Produtos("Queijo Mussarela", "NatVille", 43.75, 32, "Lácteo");
+        listaProdutos.add(queijoNatvilleGuedes);
+        listaProdutos.add(queijoIsisGuedes);
+
+        Estabelecimentos guedes = new Estabelecimentos("Guedes", "09.275.132/0001-09", listaProdutos);
+
+        listaEstabelecimentos.add(atacadao);
+        listaEstabelecimentos.add(hyper);
+        listaEstabelecimentos.add(guedes);
+
 
 
 

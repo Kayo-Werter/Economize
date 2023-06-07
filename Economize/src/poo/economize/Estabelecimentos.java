@@ -5,15 +5,18 @@ import poo.economize.Produtos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estabelecimentos {
+public class Estabelecimentos implements Comparable<Estabelecimentos> {
+
     private String nome;
     private String cnpj;
     private List<Produtos> listaProdutos = new ArrayList<>();
+    private double visitas;
 
-    public Estabelecimentos(String nome, String cnpj, List<Produtos> listaProdutos) {
+    public Estabelecimentos(String nome, String cnpj, List<Produtos> listaProdutos, double visitas) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.listaProdutos = listaProdutos;
+        this.visitas = visitas;
     }
 
     public void adicionarProduto(Produtos produto) {
@@ -42,9 +45,13 @@ public class Estabelecimentos {
     }
 
     @Override
+    public int compareTo(Estabelecimentos outroEstabelecimento) {
+        return Double.compare(this.visitas, outroEstabelecimento.visitas);
+    }
+
+    @Override
     public String toString() {
         return "Estabelecimento: " + nome + "\nCNPJ: " + cnpj;
     }
-
 
 }

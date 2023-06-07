@@ -1,5 +1,6 @@
 import poo.economize.*;
 import poo.economize.cadastro.CadastroUsuario;
+import java.util.Collections;
 
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Main {
 
         while (true) {
             // Inicio do Sistema
-            System.out.println("1 - Entrar\n2 - cadastrar\n0 - Sair");
+            System.out.println("\n1 - Entrar\n2 - cadastrar\n0 - Sair");
             int busca = sc.nextInt();
             sc.nextLine();
             // Login
@@ -26,7 +27,11 @@ public class Main {
                 Login login = new Login(email, senha);
 
                 if(login.authenticate(email, senha)) {
-                    dados.listarEstabelecimentos();
+                    System.out.print("Estabelecimentos mais visitados: ");
+                     dados.estabelecimentosMaisVistos();
+
+                    System.out.println("\n\nProdutos em oferta: ");
+                    break;
                 }
 
             } else if (busca == 2) {

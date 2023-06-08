@@ -15,6 +15,8 @@ public class Produtos {
         this.categoria = categoria;
     }
 
+
+
     public String getNome() {
         return nome;
     }
@@ -31,6 +33,11 @@ public class Produtos {
         return quantidade;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+
 
     @Override
     public String toString() {
@@ -40,8 +47,5 @@ public class Produtos {
                 "\nQuantidade = " + quantidade + "\n";
     }
 
-    public String getPreco() {
-        return null;
-    }
 
 }

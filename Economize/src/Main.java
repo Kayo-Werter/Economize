@@ -9,7 +9,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Dados dados = new Dados();
-        // Menu menu = new Menu();
 
         while (true) {
             // Inicio do Sistema
@@ -28,9 +27,13 @@ public class Main {
 
                 if(login.authenticate(email, senha)) {
                     System.out.print("Estabelecimentos mais visitados: ");
-                     dados.estabelecimentosMaisVistos();
+                    dados.estabelecimentosMaisVistos();
 
-                    System.out.println("\n\nProdutos em oferta: ");
+                    System.out.println("\n\nEscolha um estabelecimento: ");
+                    String nomeEstabelecimento = sc.nextLine();
+
+                    dados.visualizarEstabelecimento(nomeEstabelecimento);
+
                     break;
                 }
 

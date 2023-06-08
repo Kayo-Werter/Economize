@@ -42,7 +42,7 @@ public class CadastroUsuario extends Cliente {
                 numCasa = sc.nextLine();
                 break;
             } else {
-                System.out.print("Informe o endereço novamente");
+                System.out.println("Informe o endereço novamente");
             }
         }
 

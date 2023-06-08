@@ -9,7 +9,7 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
 
     private String nome;
     private String cnpj;
-    private List<Produtos> listaProdutos = new ArrayList<>();
+    private List<Produtos> listaProdutos;
     private double visitas;
 
     public Estabelecimentos(String nome, String cnpj, List<Produtos> listaProdutos, double visitas) {
@@ -19,13 +19,7 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
         this.visitas = visitas;
     }
 
-    public void adicionarProduto(Produtos produto) {
-        listaProdutos.add(produto);
-    }
 
-    public void removerProduto(Produtos produto) {
-        listaProdutos.remove(produto);
-    }
 
     public String getNome() {
         return nome;
@@ -35,14 +29,26 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
         return listaProdutos;
     }
 
-    public void visualizarProdutos() {
 
-        for (Produtos listaProduto : listaProdutos) {
-            System.out.println("\nNome: " + listaProduto.getNome() +
-                    "\nMarca: " + listaProduto.getMarca() +
-                    "\nValor: " + listaProduto.getValor());
+    public void produtosEmOferta () {
+        for (Produtos produto : listaProdutos) {
+            if (produto.getCategoria().equalsIgnoreCase("Lácteo")) {
+                double oferta = produto.getValor() - produto.getValor() * 0.3;
+                System.out.println(produto.getNome() + " " + produto.getMarca() + " de: R$" + produto.getValor() +
+                        " por: R$" + oferta);
+            }
         }
     }
+
+    public void visualizarProdutos() {
+
+        for (Produtos produto : listaProdutos) {
+            System.out.println("\nNome: " + produto.getNome() +
+                    "\nMarca: " + produto.getMarca() +
+                    "\nValor: " + produto.getValor());
+        }
+    }
+
 
     @Override
     public int compareTo(Estabelecimentos outroEstabelecimento) {

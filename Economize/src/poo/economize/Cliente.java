@@ -2,6 +2,9 @@ package poo.economize;
 
 import poo.economize.cadastro.ConsultaCep;
 import poo.economize.cadastro.Endereco;
+import poo.economize.*;
+
+import java.util.List;
 
 public class Cliente {
     protected String nome;
@@ -11,6 +14,7 @@ public class Cliente {
     protected String senha;
     protected Endereco endereco;
     protected String numCasa;
+    protected List<Produtos> listaCarrinho;
 
     public Cliente(String nome, String cpf, String telefone, String email, String senha, Endereco endereco, String numCasa) {
         this.nome = nome;
@@ -20,6 +24,18 @@ public class Cliente {
         this.senha = senha;
         this.endereco = endereco;
         this.numCasa = numCasa;
+    }
+
+    public void adicionarItensAoCarrinho() {
+        String prod;
+        double valor;
+        int quantidade;
+
+        for (Estabelecimentos estabelecimentos: Dados.getListaEstabelecimentos()) {
+            for(Produtos produto: estabelecimentos.getListaProdutos())
+                produto.getNome();
+
+        }
     }
 
     public String getNome() {

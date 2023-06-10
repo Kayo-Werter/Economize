@@ -20,7 +20,6 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
         this.listaProdutos = listaProdutos;
         this.visitas = visitas;
         this.localeBR = new Locale("pt", "BR");
-
     }
 
     public String getNome() {
@@ -35,7 +34,7 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
         NumberFormat dinheiro = NumberFormat.getCurrencyInstance(localeBR);
 
         for (Produtos produto : listaProdutos) {
-            if (produto.getCategoria().equalsIgnoreCase("Lácteo")) {
+            if (produto.getCategoria().equalsIgnoreCase("Grãos")) {
                 double oferta = produto.getValor() - produto.getValor() * 0.3;
 
                 System.out.println(produto.getNome() + " " + produto.getMarca() + " de: R$" + produto.getValor() +
@@ -67,5 +66,4 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
     public String toString() {
         return "Estabelecimento: " + nome + "\nCNPJ: " + cnpj;
     }
-
 }

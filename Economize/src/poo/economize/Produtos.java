@@ -36,6 +36,4 @@ public class Produtos {
                 "\nMarca = " + marca +
                 "\nvalor = " + valor;
     }
-
-
 }

@@ -34,7 +34,6 @@ public class Cliente {
         for (Estabelecimentos estabelecimentos: Dados.getListaEstabelecimentos()) {
             for(Produtos produto: estabelecimentos.getListaProdutos())
                 produto.getNome();
-
         }
     }
 

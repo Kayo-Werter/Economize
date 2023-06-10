@@ -6,8 +6,6 @@ import poo.economize.Dados;
 import java.util.Scanner;
 
 public class CadastroUsuario extends Cliente {
-    private static Endereco endereco;
-    private static Scanner sc = new Scanner(System.in);
 
     public CadastroUsuario(String nome, String cpf, String telefone, String email, String senha, Endereco endereco,
                            String numCasa) {
@@ -16,6 +14,7 @@ public class CadastroUsuario extends Cliente {
 
     public static void cadastrar() {
         String nome, cpf, email, telefone, senha, confirmacaoSenha, cep, numCasa, confirma;
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Nome Completo: ");
         nome = sc.nextLine();
@@ -26,6 +25,7 @@ public class CadastroUsuario extends Cliente {
         System.out.print("Telefone: ");
         telefone = sc.nextLine();
 
+        Endereco endereco;
         while (true) {
 
             System.out.print("CEP: ");

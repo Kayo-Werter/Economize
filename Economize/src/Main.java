@@ -1,6 +1,5 @@
 import poo.economize.*;
 import poo.economize.cadastro.CadastroUsuario;
-
 import java.util.Scanner;
 
 public class Main {
@@ -8,8 +7,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Dados dados = new Dados();
-
-
 
         while (true) {
             // Inicio do Sistema
@@ -20,7 +17,6 @@ public class Main {
             |  0  |   Sair       |
             +-----+--------------+
             >>>""");
-
 
             int opcao = sc.nextInt();
             sc.nextLine();
@@ -35,7 +31,6 @@ public class Main {
                 Login login = new Login(email, senha);
 
                 if (login.authenticate(email, senha)) {
-
                     while (true) {
                         System.out.print("---------- Estabelecimentos mais visitados ----------\n ");
                         dados.estabelecimentosMaisVistos();
@@ -48,23 +43,18 @@ public class Main {
                         System.out.println("------------------------------------------------------");
                         System.out.println("\n\nEscolha um estabelecimento: ");
                         String nomeEstabelecimento = sc.nextLine();
-
                         dados.visualizarEstabelecimento(nomeEstabelecimento);
-
-
+                        break;
                     }
                 } else {
                     System.out.println("Email ou senha incorretos. Tente novamente!");
                 }
-
             } else if (opcao == 2) {
                 CadastroUsuario.cadastrar();
                 System.out.println("Cadastro realizado!");
-
             } else if (opcao == 0) {
                 break;
             }
-
         }
     }
 }

@@ -4,7 +4,6 @@ import poo.economize.Dados;
 
 public class Login {
 
-
     public Login(String email, String senha) {
         authenticate(email, senha);
     }

@@ -25,6 +25,7 @@ public class ConsultaCep {
 
         } catch (Exception e) {
             throw new RuntimeException("Não foi possível consultar o cep informado");
+
         }
     }
 }

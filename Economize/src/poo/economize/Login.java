@@ -9,7 +9,9 @@ public class Login {
     }
 
     public boolean authenticate(String email, String senha) {
+
         boolean isAuthenticated = false;
+
         for (Cliente listaCliente : Dados.getListaClientes()) {
             isAuthenticated = listaCliente.getEmail().equalsIgnoreCase(email) &&
                     listaCliente.getSenha().equalsIgnoreCase(senha);

@@ -36,4 +36,8 @@ public class Produtos {
                 "\nMarca = " + marca +
                 "\nvalor = " + valor;
     }
+
+    public void aplicarDesconto(double oferta) {
+        this.valor = oferta;
+    }
 }

@@ -36,12 +36,14 @@ public class Estabelecimentos implements Comparable<Estabelecimentos> {
         for (Produtos produto : listaProdutos) {
             if (produto.getCategoria().equalsIgnoreCase("Grãos")) {
                 double oferta = produto.getValor() - produto.getValor() * 0.3;
-
+//                produto.aplicarDesconto();
                 System.out.println(produto.getNome() + " " + produto.getMarca() + " de: R$" + produto.getValor() +
                         " por: R$" + dinheiro.format(oferta));
             }
         }
     }
+
+
 
     public void visualizarProdutos() {
 
